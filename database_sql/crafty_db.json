@@ -1,0 +1,19 @@
+[
+{"type":"header","version":"5.0.3","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"crafty_db"},
+{"type":"table","name":"admins","database":"crafty_db","data":
+[
+
+]
+}
+,{"type":"table","name":"sellers","database":"crafty_db","data":
+[
+
+]
+}
+,{"type":"table","name":"users","database":"crafty_db","data":
+[
+
+]
+}
+]

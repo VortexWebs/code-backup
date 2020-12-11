@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container"> 
-        <h1> Welcome to Home page </h1>
+        <h1> Welcome to Crafty </h1>
         <a href="login"> Login </a> <br>
         <a href="signup"> Sign Up </a>
     </div>

@@ -8,9 +8,14 @@
 </head>
 <body>
     <div class="container"> 
-        <h1> Welcome to Home page </h1>
-        <a href="login"> Login </a> <br>
-        <a href="signup"> Sign Up </a>
+        @if (session('isLogged') != "true")
+            <h1> Welcome to Home page </h1>
+            <a href="login"> Login </a> <br>
+            <a href="signup"> Sign Up </a>    
+        @else
+            <form action="logout" method="POST">@csrf<button name="logout"> Logout </button></form>           
+        @endif
+        
     </div>
 </body>
 </html>

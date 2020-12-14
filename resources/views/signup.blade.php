@@ -14,8 +14,8 @@
         @csrf
         <div class="from-design">
             <h1> Create Your account here </h1>
-            <input type="radio" name="utype" value="Customer" required>Customer
-            <input type="radio" name="utype" value="Seller" required>Seller <br>
+            <input type="radio" name="utype" value="customer" required>Customer
+            <input type="radio" name="utype" value="seller" required>Seller <br>
             <input type="email" name="email" placeholder="Enter Email" required> <br>
             <input type="text" name="uname" placeholder="Enter Username" required> <br>
             <input type="password" name="pass" placeholder="Enter Password" required> <br>

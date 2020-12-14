@@ -9,7 +9,10 @@
 <body>
     <form action="login" method="POST">
         @csrf
-        <input type="text">
+        <input type="radio" name="utype" value="customer" required>Customer
+        <input type="radio" name="utype" value="seller" required>Seller <br>
+        <input type="email"  placeholder="Enter Email" name="email"> <br>
+        <input type="password" placeholder="Enter Password" name="pass"> <br>
         <input type="submit" value="Login">
     </form>
 </body>

@@ -1,4 +1,4 @@
-@if (session('isLogged') == "true" && session('user') == "seller")
+@if (session('isLogged') == "true" && session('user') == "customer")
     <!DOCTYPE html>
     <html lang="en">
     <head>

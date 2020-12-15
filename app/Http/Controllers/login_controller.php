@@ -13,7 +13,7 @@ class login_controller extends Controller
         $utype = $req->input('utype');
 
         if($utype == "customer"){
-            $data = users::where([
+            $data = users::select('id')->where([
                 ["email",$req->input('email')],
                 ["password",$req->input('pass')]
             ])->get();
@@ -21,10 +21,12 @@ class login_controller extends Controller
                 echo "Email OR password combination wrong";
             }else{
                 $req->session()->put('isLogged','true');
-                return redirect('/');
+                $req->session()->put('user',$utype);
+                $req->session()->put('user_id',$data);
+                return redirect('user_profile');
             }
         }else{
-            $data = seller::where([
+            $data = seller::select('id')->where([
                 ["email",$req->input('email')],
                 ["password",$req->input('pass')]
             ])->get();
@@ -33,7 +35,9 @@ class login_controller extends Controller
                 echo "Email OR password combination wrong";
             }else{
                 $req->session()->put('isLogged','true');
-                return redirect('/');
+                $req->session()->put('user',$utype);
+                $req->session()->put('user_id',$data);
+                return redirect('seller_profile');
             }
         }
         
@@ -53,7 +57,13 @@ class login_controller extends Controller
             $user->password = $pass;
             $user->save();
             $req->session()->put('isLogged','true');
+            $data = users::select('id')->where([
+                ["email",$email],
+                ["password",$pass]
+            ])->get();
+            $req->session()->put('user_id',$data);
             return redirect('user_profile');
+
         }else{
             $seller = new seller();
             $seller->email = $email;
@@ -61,6 +71,11 @@ class login_controller extends Controller
             $seller->password = $pass;
             $seller->save();
             $req->session()->put('isLogged','true');
+            $data = seller::select('id')->where([
+                ["email",$email],
+                ["password",$pass]
+            ])->get();
+            $req->session()->put('user_id',$data);
             return redirect('seller_profile');
         }
     }

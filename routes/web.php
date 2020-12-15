@@ -19,8 +19,8 @@ Route::get('/', function () {
 
 Route::view('login', 'login');
 Route::view('signup', 'signup');
-Route::view('seller_profile', 'seller/seller_profile');
-Route::view('user_profile', 'user/user_profile');
+Route::get('seller_profile', 'user_controller@seller_profile');
+Route::get('user_profile', 'user_controller@user_profile');
 
 
 

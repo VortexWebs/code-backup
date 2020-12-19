@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="container"> 
+
         @if (session('isLogged') != "true")
             <h1> Welcome to Home page </h1>
             <a href="login"> Login </a> <br>
@@ -16,6 +17,11 @@
             <form action="logout" method="POST">@csrf<button name="logout"> Logout </button></form>           
         @endif
         
+
+        <h1> Welcome to Crafty </h1> 
+        <a href="login"> Login </a> <br>
+        <a href="signup"> Sign Up </a>
+
     </div>
 </body>
 </html>
